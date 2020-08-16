@@ -1,0 +1,840 @@
+* {
+    /* outline: solid red 3px; */
+    font-family: pixelFont !important;
+}
+
+body, html {
+    margin: 0; 
+    height: 100%;
+    background-color: lightgreen;
+    overflow: hidden;
+}
+
+.animal {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    background-size: cover;
+}
+
+#endscore {
+    position: absolute;
+    bottom: 16%;
+    width: 100%;
+    text-align: center;
+}
+
+.deathImage {
+    top: 200px;
+    left: 50%;
+    height: 300px !important;
+    width: 300px !important;
+    position: relative;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+}
+
+#speed {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.animal h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    bottom: -20px;
+    font-size: 13px;
+    color: white;
+    z-index: 100;
+    text-align: center;
+}
+
+.fadeout {
+animation: fadeout 1s forwards;
+}
+
+.fadein {
+    animation: fadein 1s forwards;
+    }
+
+@keyframes fadeout {
+    from {opacity: 1}
+    to {opacity: 0}
+}
+
+@keyframes fadein {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+#deathScreen {
+    /* margin-top: -30px; */
+    height: 100vh; 
+    /* width:  50vw; */
+    position: relative;
+    z-index: 600;
+    background-color: rgba(255, 0, 0, 0.514);
+    backdrop-filter: blur(2px);
+}
+
+#animalOriginal {
+    /* z-index: 400; */
+}
+
+.deathGrid {
+    z-index: 800;
+    opacity: 0;
+    position: relative;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-rows: 1fr; */
+}
+
+.scoreGrid {
+display: grid;
+grid-template-rows: 70% 30%;
+}
+
+@font-face {
+    font-family: pixelFont;
+    src: url(./media/Fonts/slkscr.ttf);
+}    
+
+.scoreBoard {
+    background-color: black;
+    z-index: 1000;
+    color: white;
+    padding: 60px;
+    
+}
+
+@keyframes neon {
+  
+    0%, 9%, 12%, 13%, 16%, 75%, 78%, 80%, 83%, 100% {
+      text-shadow:	0 0 5px #fff,
+              0 0 10px #fff,
+              0 0 15px #ff0099,
+              0 0 20px #ff0099;  		
+      }
+    
+    /*small flicker*/
+    75.5% {
+      text-shadow:	0 0 5px #fff,
+              0 0 10px #fff,
+              0 0 37px #ff0060,
+              0 0 50px #ff0099;
+    }
+    /*medium flicker*/ 
+    9.5%, 80.5% {
+      text-shadow:	0 0 5px #fff,
+              0 0 30px #fff,
+              0 0 43px #ff0060,
+              0 0 55px #ff0099;
+      }
+    /*large flicker*/
+    13.5% {
+      text-shadow:	0 0 10px #fff,
+              0 0 33px #fff,
+              0 0 52px #ff0060,
+              0 0 65px #ff0099;
+    }
+    }
+    h1.neon {
+      
+    }
+
+.scoreBoard h1 {
+      font-weight: bold;
+      font-family: arial;
+      color: #fff;
+      animation: neon 3s infinite;  
+}
+
+
+
+.scoreBoard p {
+    font-size: 20px;
+    text-shadow: 0 0 5px #fff,0 0 10px magenta;
+    color: white;
+    
+
+}
+
+.nameInput {
+background-color: black;
+height: 100%;
+width: 100%;
+position: relative;
+z-index: 1000;
+}
+
+#submitButton {
+height: 100px;
+width: 100px;
+color: whitesmoke;
+background-color: rgb(66, 66, 66);
+border: none;
+position: absolute;
+left: 445px;
+top: 50%;
+transform: translate(0, -50%);
+}
+
+#nameInputField {
+    position: relative;
+    height: 100px;
+    width: 370px;
+    background-color: rgb(66, 66, 66);
+    border: none;
+    left: 60px;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 1000;
+    color: whitesmoke;
+    font-size: 30px;
+} 
+
+#deathScreen h1 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 20%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    color: white;
+}
+
+#deathScreen p {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    z-index: 300;
+}
+
+#continue {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    bottom: 6%;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    z-index: 300;
+    animation: fadeing 1s infinite both;
+    cursor: pointer;
+    background-color: black;
+}
+
+@keyframes fadeing {
+    0% {opacity: 20%;}
+    50% {opacity: 100%;}
+    100% {opacity: 20%;}
+}
+
+#population {
+    position: absolute;
+    right: 40px;
+    top: 7px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+.grass {
+    background-image: url(./media/grass.png);
+    background-size: 60px;
+    background-repeat: repeat;
+}
+
+.duck {
+    background-image: url(./media/fuck.png);
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    background-size: cover;
+    
+    
+}
+
+.elephant {
+    background-image: url(./media/elephant.png);
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.animal_tophalf {
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-position-y: bottom;
+}
+
+.animal_bottomhalf {
+    background-position-y: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 50%;
+}
+
+.healthbar {
+position: absolute;
+bottom: -30px;
+left: 50%;
+transform: translate(-50%, -0%);
+height: 25px;
+width: 50px;
+
+}
+
+#splashscreen {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./media/SQUIRRELEXPANDED-01.jpeg);
+    background-position: center;
+    background-size: cover;
+    z-index: 900;
+}
+
+#splashscreen h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 12%;
+    right: 10%;
+    font-size: 50px;
+    color: rgb(95, 161, 87);
+    z-index: 100;
+    text-align: center;
+    animation: vibrate-3 0.5s linear infinite both;
+    text-shadow: 0px 0px 30px rgb(255, 255, 255)
+    
+
+}
+
+#pressarrowtext {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 35%;
+    right: 10%;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    z-index: 100;
+    text-align: center;
+    animation: fadeing 1s infinite both;
+}
+
+#splashscreen .eagle {
+    height: 200px;
+    width: 200px;
+    background-image: url(./media/eagle.gif);
+    position: absolute;
+    left: 60%;
+    top: 2%;
+}
+
+#startEvolution {
+    height: 50px;
+    width: 150px;
+    position: absolute;
+    left: 60%;
+    top: 60%;
+    background-color: rgb(95, 161, 87);
+    border-radius: 20px;
+    text-shadow: 0px 0px 30px rgb(255, 255, 255)
+}
+
+
+
+
+/* ----------------------------------------------
+ * Generated by Animista on 2020-3-29 13:12:20
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation vibrate-3
+ * ----------------------------------------
+ */
+ @keyframes vibrate-3 {
+    0% {
+      transform: translate(0);
+    }
+    10% {
+      transform: translate(-2px, -2px);
+    }
+    20% {
+      transform: translate(2px, -2px);
+    }
+    30% {
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      transform: translate(2px, 2px);
+    }
+    50% {
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      transform: translate(2px, -2px);
+    }
+    70% {
+      transform: translate(-2px, 2px);
+    }
+    80% {
+      transform: translate(-2px, -2px);
+    }
+    90% {
+      transform: translate(2px, -2px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+  
+
+.fivehealth {
+background: url(./media/healthfive.png);
+}
+
+.fourhealth {
+background: url(./media/healthfour.png);
+}
+
+.threehealth {
+background: url(./media/healththree.png);
+}
+
+.twohealth {
+background: url(./media/healthtwo.png);
+}
+
+.onehealth {
+background: url(./media/healthone.png);
+}
+
+.damageTaken {
+    background-color: red;
+}
+
+.predatorbigger {
+    outline: 10px solid rgba(255, 0, 0, 0.5) !important;
+}
+
+.predatorsmaller {
+    outline: 5px solid rgba(255, 238, 0, 0.5) !important;
+}
+
+.squirrel_tophalf {
+    background-image: url(./media/squirrel_tophalf.png);
+}
+
+.squirrel_bottomhalf {
+    background-image: url(./media/squirrel_bottomhalf.png);
+}
+
+.duck_tophalf {
+    background-image: url(./media/fuck_tophalf.png);
+}
+
+.duck_bottomhalf {
+    background-image: url(./media/fuck_bottomhalf.png);
+}
+
+.elephant_tophalf {
+    background-image: url(./media/elephant_tophalf.png);
+}
+
+.elephant_bottomhalf {
+    background-image: url(./media/elephant_bottomhalf.png);
+}
+
+.birb_tophalf {
+    background-image: url(./media/birb_tophalf.png);
+}
+
+.birb_bottomhalf {
+    background-image: url(./media/birb_bottomhalf.png);
+}
+
+.squid_tophalf {
+    background-image: url(./media/squid_tophalf.png);
+}
+
+.squid_bottomhalf {
+    background-image: url(./media/squid_bottomhalf.png);
+}
+
+.snake_tophalf {
+    background-image: url(./media/snake_tophalf.png);
+}
+
+.snake_bottomhalf {
+    background-image: url(./media/snake_bottomhalf.png);
+}
+
+.cat_tophalf {
+    background-image: url(./media/cat_tophalf.png);
+}
+
+.cat_bottomhalf {
+    background-image: url(./media/cat_bottomhalf.png);
+}
+
+.python_tophalf {
+    background-image: url(./media/python_tophalf.png);
+}
+
+.python_bottomhalf {
+    background-image: url(./media/python_bottomhalf.png);
+}
+
+.specialPower_dash {
+    outline: 3px dashed rgba(255, 168, 5, 0.685) !important;
+}
+
+.specialPower_escape {
+    outline: 3px dashed rgba(5, 218, 255, 0.801) !important;
+}
+
+.specialPower_extraDamage {
+    outline: 3px dashed rgba(34, 16, 18, 0.685) !important;
+}
+
+.specialPower_teleport {
+    outline: 3px dashed rgba(255, 5, 243, 0.644) !important;
+}
+
+.bear {
+    background-image: url(./media/bear.gif);
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.speedpug {
+    background-image: url(./media/speedpug.gif);
+    
+    position: absolute;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.boar {
+    background-image: url(./media/boar.gif);
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.blooncat {
+    background-image: url(./media/cat.gif);
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.isimmune {
+    opacity: .5;
+}
+
+.deathanimation {
+    animation: death 30s forwards;
+}
+
+@keyframes death {
+    0%{transform: rotate(0deg);}
+    10%{transform: rotate(180deg);}
+    90%{transform: rotate(180deg); opacity: 1;}
+    100%{opacity: 0; transform: rotate(180deg);}
+}
+
+.hud {
+    position: absolute;
+    top: 0px;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    height: 100%;
+    width: 160px;
+    background-color: rgba(0, 0, 0, 0.308);
+    border-radius: 0px 0px 30px 0px;
+    padding: 20px;
+    z-index: 10;
+    
+}
+
+.powerups {
+    /* padding: 20px; */
+    
+}
+
+.powerups p {
+    position: relative;
+    left: 60px;
+    top: -30px;
+    text-align: center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+#yellow {
+    outline: 3px dashed rgba(5, 218, 255, 0.801) !important;
+    height: 40px;
+    width: 40px;
+}
+
+#purple {
+    outline: 3px dashed rgba(255, 168, 5, 0.685) !important;
+    height: 40px;
+    width: 40px;
+}
+
+#red {
+    outline: 3px dashed rgba(34, 16, 18, 0.685) !important;
+    height: 40px;
+    width: 40px;
+}
+
+#black {
+    outline: 3px dashed rgba(255, 5, 243, 0.644) !important;
+    height: 40px;
+    width: 40px;
+}
+
+#predatorbiggericon2 {
+    outline: 10px solid rgba(255, 0, 0, 0.5) !important;
+    height: 40px;
+    max-width: 40px;
+    display: relative;
+    margin-top: -15px;
+}
+
+#predatorsmallericon2 {
+    height: 40px;
+    width: 40px;
+    outline: 5px solid rgba(255, 238, 0, 0.5) !important;
+    display: relative;
+    margin-top: -15px;
+}
+
+#predatorbiggericon2 p {
+    position: relative;
+    left: 60px;
+    top: -15px;
+    text-align: center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#predatorsmallericon2 p {
+    position: relative;
+    left: 60px;
+    top: -15px;
+    text-align: center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#infobutton {
+height: 80px;
+width: 80px;
+background-color: white;
+animation: pulsing 1.8s infinite both;
+position: absolute;
+bottom: 60px;
+right: 60px;
+border-radius: 50%;
+}
+
+#infobutton h2 {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    color: rgb(26, 105, 252);
+    line-height: 80px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    font-size: 30px;
+    z-index: 600;
+}
+
+@keyframes pulsing {
+    0%{transform: scale(1);}
+    50%{transform: scale(1.3);}
+    100%{transform: scale(1);}
+}
+
+#infoscreen {
+    height: 500px;
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.726);
+    position: absolute;
+    left: -600px;
+    bottom: 200px;
+    color: black;
+    z-index: 901;
+}
+
+#infoscreen p {
+    color: black;
+    position: relative;
+    top: 0px;
+    margin: 20px;
+    left: 0px;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+@keyframes comein {
+    from{transform: translate(0,0);}
+    to{transform: translate(600px ,0);}
+}
+
+@keyframes goout {
+    from{transform: translate(600px,0);}
+    to{transform: translate(0 ,0);}
+}
+
+.comein {
+    animation: comein 1s forwards;
+}
+
+.goout {
+    animation: goout 1s forwards;
+}
+
+
+@media screen and (max-width: 800px) {
+    * {
+      outline: solid red 3px;
+      /* zoom: 80%; */
+
+      
+    }
+    html, body {
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+
+    .hud {
+        position: absolute;
+        top: 0px;
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        height: 100%;
+        width: 100px;
+        background-color: rgba(0, 0, 0, 0.308);
+        border-radius: 0px 0px 30px 0px;
+        padding: 10px;
+        z-index: 10;
+        
+    }
+
+    .powerups p {
+        font-size: 15px !important;
+        position: relative;
+        left: 10px;
+        top: -30px;
+        text-align: center;
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+    
+    }
+
+    #yellow {
+        outline: 3px dashed rgba(5, 218, 255, 0.801) !important;
+        height: 20px;
+        width: 20px;
+    }
+    
+    #purple {
+        outline: 3px dashed rgba(255, 168, 5, 0.685) !important;
+        height: 20px;
+        width: 20px;
+    }
+    
+    #red {
+        outline: 3px dashed rgba(34, 16, 18, 0.685) !important;
+        height: 20px;
+        width: 20px;
+    }
+    
+    #black {
+        outline: 3px dashed rgba(255, 5, 243, 0.644) !important;
+        height: 20px;
+        width: 20px;
+    }
+    
+    #predatorbiggericon2 {
+        outline: 10px solid rgba(255, 0, 0, 0.5) !important;
+        height: 20px;
+        max-width: 20px;
+        display: relative;
+        margin-top: -15px;
+    }
+    
+    #predatorsmallericon2 {
+        height: 20px;
+        width: 20px;
+        outline: 5px solid rgba(255, 238, 0, 0.5) !important;
+        display: relative;
+        margin-top: -15px;
+    }
+    
+    #predatorbiggericon2 p {
+        position: relative;
+        left: 10px;
+        top: -15px;
+        text-align: center;
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    
+    #predatorsmallericon2 p {
+        position: relative;
+        left: 10px;
+        top: -15px;
+        text-align: center;
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+    }
+  }
+
