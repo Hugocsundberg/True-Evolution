@@ -286,7 +286,7 @@ transform: translate(0, -50%);
     background-repeat: no-repeat;
     position: absolute;
     width: 100%;
-    height: 50%;
+    height: 50%;f
     background-position-y: bottom;
 }
 
@@ -689,7 +689,7 @@ border-radius: 50%;
     text-align: center;
     color: rgb(26, 105, 252);
     line-height: 80px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Roboto';
     margin: 0;
     font-size: 30px;
     z-index: 600;
