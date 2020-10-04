@@ -1,5 +1,5 @@
 # True-Evolution
-A Javascript-based game
+A Javascript-based game (Works on desktop, mobile is playable but is pretty much alpha build.)
 
 The purpose of the game is to survive as long as possible. If you collide with another animal you will mate with it and become the child of those two animals.
 The new animal will have traits from both the parents. Traits are: speed, size, sound, special power.
