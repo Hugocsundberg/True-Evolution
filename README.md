@@ -9,5 +9,5 @@ Try to get bigger, faster and watch out for predators. Tip: kill off the predato
 You can play the game here: https://svartkaff3.se/True%20Evolution/Animal/ 
 
 I created this game to learn about classes and objects. It ended up way bigger and time-consuming than i expected. It is one of the earlier projects in Javascript i did. Beware of possible bad code and commit messages.
-Game is fully working on desktop but has problems on mobile at the moment.
+Game is fully working on desktop but has problems on mobile at the moment. 
 
