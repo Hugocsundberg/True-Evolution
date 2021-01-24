@@ -1,4 +1,6 @@
 # True-Evolution
+(This is an older application my code is more structured and clean nowadays)
+
 A Javascript-based game (Works on desktop, mobile is playable but is pretty much alpha build.)
 ![](Screenshot_34.png)
 
