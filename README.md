@@ -1,7 +1,7 @@
 # True-Evolution
 (This is an old application my code is more structured and clean nowadays)
 
-A Javascript-based game (Works on desktop, mobile is playable but is pretty much alpha build.)
+A Javascript-based game (Works on desktop, mobile is not fully supported at the moment.)
 ![](Screenshot_34.png)
 
 The purpose of the game is to survive as long as possible. If you collide with another animal you will become the child of those two animals.
