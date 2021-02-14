@@ -70,6 +70,7 @@ const startgame = (e) => {
                     element.parentNode.removeChild(element);
                 }
                 removeElement("splashscreen");
+                document.querySelector('.mobileCover').remove()
             }, 2000);
             dayCounter()
         }
